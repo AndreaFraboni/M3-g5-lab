@@ -13,7 +13,8 @@ public class Bullet : MonoBehaviour
             if (collision.gameObject.CompareTag(Tags.Enemy))
             {
                 Debug.Log("ENEMY COLPITO !!! LO DEVO DISTRUGGERE !!");
-
+                collision.gameObject.GetComponent<Enemy>().DestroyMe();
+                Destroy(gameObject);
             }
         }
 

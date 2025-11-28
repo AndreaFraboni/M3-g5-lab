@@ -44,4 +44,9 @@ public class PlayerController : MonoBehaviour
         _rb.MovePosition(_rb.position + direction * (_speed * Time.deltaTime)); //_rb.velocity = direction * _speed;
     }
 
+    public void DestroyMe()
+    {
+        Destroy(gameObject);
+    }
+
 }

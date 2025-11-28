@@ -26,10 +26,14 @@ public class Enemy : MonoBehaviour
      transform.position = newPos;
     }
 
-
     private void FixedUpdate()
     {
         EnemyMovement();
+    }
+
+    public void DestroyMe()
+    {
+        Destroy(gameObject);
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -39,7 +43,8 @@ public class Enemy : MonoBehaviour
             if (collision.gameObject.CompareTag(Tags.Player))
             {
                 Debug.Log("HO COLPITO IL PLAYER !!! LO DEVO DISTRUGGERE !!");
-
+                //collision.gameObject.GetComponent<PlayerController>().DestroyMe();
+                player.DestroyMe();
             }
         }
     }
